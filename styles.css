@@ -1,6 +1,6 @@
 /* ============================================
    Blanca Civieta — Preparación Física Opositores
-   Paleta: grafito, azul policial, bronce apagado
+   Paleta neutra: negro, grafito, plata, blanco roto
    ============================================ */
 
 /* --- Variables --- */
@@ -10,11 +10,17 @@
   --color-card: #151A21;
   --color-text: #F5F5F5;
   --color-text-muted: #A1A1AA;
-  --color-accent: #2563EB;
-  --color-accent-hover: #1D4ED8;
+  --color-silver: #C4C4C4;
+  --color-silver-dim: rgba(196, 196, 196, 0.45);
   --color-bronze: #B08D57;
   --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-accent: rgba(37, 99, 235, 0.3);
+  --color-border-silver: rgba(196, 196, 196, 0.35);
+  --color-border-accent: rgba(196, 196, 196, 0.22);
+
+  /* Acentos por cuerpo (solo cards de pruebas) */
+  --color-cnp: #1B365D;
+  --color-gc: #5A6B47;
+  --color-local: #3D8BD4;
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --radius-sm: 8px;
@@ -96,27 +102,29 @@ ul {
 }
 
 .btn--primary {
-  background: var(--color-accent);
-  color: #fff;
-  border-color: var(--color-accent);
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .btn--primary:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+  background: var(--color-silver);
+  border-color: var(--color-silver);
+  color: var(--color-bg);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
 }
 
 .btn--outline {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-border-silver);
 }
 
 .btn--outline:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  background: var(--color-bg-alt);
+  border-color: var(--color-silver-dim);
+  color: var(--color-text);
   transform: translateY(-2px);
 }
 
@@ -202,7 +210,7 @@ ul {
 }
 
 .navbar__logo:hover {
-  color: var(--color-accent);
+  color: var(--color-silver);
 }
 
 .navbar__logo-sep {
@@ -278,7 +286,7 @@ ul {
   padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 8vw, 6rem);
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
     var(--color-bg);
 }
 
@@ -288,8 +296,8 @@ ul {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 80%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 80%);
@@ -312,7 +320,7 @@ ul {
 .hero__subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-silver);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
@@ -384,7 +392,7 @@ ul {
 
 .section__link {
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-silver);
   transition: color var(--transition);
 }
 
@@ -423,9 +431,63 @@ ul {
   box-shadow: var(--shadow-hover);
 }
 
-.card--featured {
-  border-color: rgba(37, 99, 235, 0.25);
-  background: linear-gradient(145deg, var(--color-card) 0%, rgba(37, 99, 235, 0.06) 100%);
+/* Acentos por cuerpo — solo en detalles, fondo neutro */
+.card--cnp,
+.card--gc,
+.card--local {
+  position: relative;
+}
+
+.card--cnp {
+  --card-accent: var(--color-cnp);
+}
+
+.card--gc {
+  --card-accent: var(--color-gc);
+}
+
+.card--local {
+  --card-accent: var(--color-local);
+}
+
+.card--cnp::before,
+.card--gc::before,
+.card--local::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card--cnp .card__icon,
+.card--gc .card__icon,
+.card--local .card__icon {
+  color: var(--card-accent);
+}
+
+.card--cnp .card__list li::before,
+.card--gc .card__list li::before,
+.card--local .card__list li::before {
+  background: var(--card-accent);
+}
+
+.card--cnp:hover {
+  border-color: rgba(27, 54, 93, 0.4);
+  box-shadow: var(--shadow-hover), 0 0 28px rgba(27, 54, 93, 0.15);
+}
+
+.card--gc:hover {
+  border-color: rgba(90, 107, 71, 0.45);
+  box-shadow: var(--shadow-hover), 0 0 28px rgba(90, 107, 71, 0.15);
+}
+
+.card--local:hover {
+  border-color: rgba(61, 139, 212, 0.4);
+  box-shadow: var(--shadow-hover), 0 0 28px rgba(61, 139, 212, 0.18);
 }
 
 .card--compact {
@@ -441,7 +503,7 @@ ul {
 .card__icon {
   width: 40px;
   height: 40px;
-  color: var(--color-accent);
+  color: var(--color-silver);
   margin-bottom: 1.25rem;
 }
 
@@ -454,7 +516,7 @@ ul {
   display: block;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-silver);
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
 }
@@ -489,7 +551,7 @@ ul {
   top: 0.55em;
   width: 6px;
   height: 6px;
-  background: var(--color-accent);
+  background: var(--color-silver-dim);
   border-radius: 50%;
 }
 
@@ -498,7 +560,7 @@ ul {
   width: auto;
   height: auto;
   background: none;
-  color: var(--color-accent);
+  color: var(--color-silver);
   font-size: 0.75rem;
   font-weight: 700;
   top: 0.1em;
@@ -545,7 +607,7 @@ ul {
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(135deg, var(--color-card) 0%, rgba(37, 99, 235, 0.08) 100%);
+    linear-gradient(135deg, var(--color-card) 0%, rgba(255, 255, 255, 0.04) 100%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -607,7 +669,7 @@ ul {
   padding: clamp(4rem, 8vw, 6rem) 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 70% 80% at 50% 100%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 50% 100%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
     var(--color-bg-alt);
   text-align: center;
 }
@@ -733,7 +795,7 @@ ul {
 }
 
 .footer__links a:hover {
-  color: var(--color-accent);
+  color: var(--color-silver);
 }
 
 .footer__copy {
