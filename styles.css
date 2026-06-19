@@ -202,15 +202,25 @@ ul {
 }
 
 .navbar__logo {
+  display: flex;
+  align-items: center;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--color-text);
   white-space: nowrap;
-  transition: color var(--transition);
+  transition: opacity var(--transition);
+  flex-shrink: 0;
 }
 
 .navbar__logo:hover {
-  color: var(--color-silver);
+  opacity: 0.88;
+}
+
+.navbar__logo-img {
+  display: block;
+  height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar__logo-sep {
@@ -512,6 +522,25 @@ ul {
   height: 100%;
 }
 
+/* Logos institucionales en cards */
+.card__logo-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.card__body-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .card__number {
   display: block;
   font-size: 0.75rem;
@@ -586,6 +615,93 @@ ul {
 .card--large .btn {
   align-self: flex-start;
   margin-top: auto;
+}
+
+/* ============================================
+   NORMATIVA OFICIAL Y BAREMOS
+   ============================================ */
+.card--normativa {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--normativa .card__text {
+  flex-grow: 1;
+}
+
+.normativa-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.normativa-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.875rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--color-border-silver);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.normativa-btn:hover {
+  background: var(--color-bg-alt);
+  border-color: var(--color-silver-dim);
+  transform: translateY(-1px);
+}
+
+.normativa-btn__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.normativa-btn__detail {
+  font-size: 0.8125rem;
+  color: var(--color-silver);
+}
+
+.normativa-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: 0.25rem;
+}
+
+.normativa-foot {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.normativa-notice {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-silver-dim);
+  border-radius: var(--radius-lg);
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.normativa-notice__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.normativa-notice__text {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
 }
 
 /* ============================================
@@ -858,6 +974,18 @@ ul {
 
   .navbar__logo {
     font-size: 0.8125rem;
+  }
+
+  .navbar__logo-img {
+    height: 34px;
+  }
+
+  .normativa-btn {
+    width: 100%;
+  }
+
+  .card__logo-wrap {
+    margin-inline: auto;
   }
 
   .hero__actions,
