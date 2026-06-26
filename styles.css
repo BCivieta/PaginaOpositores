@@ -197,7 +197,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 78px;
   gap: 1.5rem;
 }
 
@@ -218,7 +218,7 @@ ul {
 
 .navbar__logo-img {
   display: block;
-  height: 42px;
+  height: 54px;
   width: auto;
   object-fit: contain;
 }
@@ -316,7 +316,7 @@ ul {
 
 .hero__content {
   position: relative;
-  max-width: 720px;
+  max-width: 860px;
 }
 
 .hero__title {
@@ -339,7 +339,7 @@ ul {
   font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--color-text-muted);
   margin-bottom: 2.5rem;
-  max-width: 600px;
+  max-width: 720px;
 }
 
 .hero__actions {
@@ -359,11 +359,84 @@ ul {
    SECCIONES GENERALES
    ============================================ */
 .section {
+  position: relative;
   padding-block: var(--section-padding);
 }
 
 .section--alt {
   background-color: var(--color-bg-alt);
+}
+
+.section--solid {
+  background: var(--color-bg);
+}
+
+.section--parallax-bg {
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(11, 15, 20, 0.94) 0%,
+      rgba(11, 15, 20, 0.74) 18%,
+      rgba(11, 15, 20, 0.76) 82%,
+      rgba(11, 15, 20, 0.94) 100%
+    ),
+    linear-gradient(rgba(11, 15, 20, 0.64), rgba(11, 15, 20, 0.64)),
+    url("Assets/images/Cuerpos.png");
+  background-attachment: fixed, fixed, fixed;
+  background-position: center, center, center 38%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section--parallax-bg::before,
+.section--parallax-bg::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: clamp(3rem, 7vw, 6rem);
+  pointer-events: none;
+}
+
+.section--parallax-bg::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--color-bg) 0%, rgba(11, 15, 20, 0) 100%);
+}
+
+.section--parallax-bg::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--color-bg) 0%, rgba(11, 15, 20, 0) 100%);
+}
+
+.section--parallax-bg + .section--parallax-bg::before {
+  opacity: 0.38;
+}
+
+.section--parallax-bg > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section--parallax-bg .section__subtitle,
+.section--parallax-bg .section__text {
+  color: rgba(245, 245, 245, 0.78);
+}
+
+.section--parallax-bg .card,
+.section--parallax-bg .normativa-notice {
+  background: rgba(21, 26, 33, 0.9);
+  border-color: rgba(196, 196, 196, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.section--parallax-bg .card:hover,
+.section--parallax-bg .normativa-notice:hover {
+  border-color: rgba(196, 196, 196, 0.32);
+  box-shadow: var(--shadow-hover), 0 0 30px rgba(196, 196, 196, 0.08);
 }
 
 .section__header {
@@ -559,6 +632,13 @@ ul {
 .card__title--lg {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   margin-bottom: 1.5rem;
+}
+
+#pruebas .card__title,
+#normativa .card__title {
+  font-size: clamp(1.45rem, 2.6vw, 1.75rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
 }
 
 .card__list {
@@ -977,7 +1057,12 @@ ul {
   }
 
   .navbar__logo-img {
-    height: 34px;
+    height: 42px;
+  }
+
+  .section--parallax-bg {
+    background-attachment: scroll, scroll, scroll;
+    background-position: center, center, 52% center;
   }
 
   .normativa-btn {
