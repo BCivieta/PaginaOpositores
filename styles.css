@@ -197,7 +197,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 78px;
+  height: 88px;
   gap: 1.5rem;
 }
 
@@ -218,9 +218,10 @@ ul {
 
 .navbar__logo-img {
   display: block;
-  height: 54px;
-  width: auto;
-  object-fit: contain;
+  height: 72px;
+  width: clamp(260px, 24vw, 360px);
+  object-fit: cover;
+  object-position: center 52%;
 }
 
 .navbar__logo-sep {
@@ -1156,13 +1157,17 @@ ul {
    RESPONSIVE — Mobile first
    ============================================ */
 @media (max-width: 768px) {
+  .navbar__inner {
+    height: 82px;
+  }
+
   .navbar__toggle {
     display: flex;
   }
 
   .navbar__nav {
     position: fixed;
-    top: 72px;
+    top: 82px;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -1207,7 +1212,10 @@ ul {
   }
 
   .navbar__logo-img {
-    height: 42px;
+    height: 58px;
+    width: 190px;
+    object-fit: cover;
+    object-position: center 52%;
   }
 
   .section--parallax-bg {
