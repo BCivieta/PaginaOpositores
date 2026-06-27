@@ -18,7 +18,7 @@
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="#inicio" class="navbar__logo">
-      <span class="navbar__logo-sep"></span> Preparación Física Opositores
+        <img src="Assets/images/LogoClaro.png" alt="Preparación Física Opositores" class="navbar__logo-img">
       </a>
 
       <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -31,6 +31,7 @@
         <ul class="navbar__list">
           <li><a href="#inicio" class="navbar__link">Inicio</a></li>
           <li><a href="#pruebas" class="navbar__link">Pruebas</a></li>
+          <li><a href="#normativa" class="navbar__link">Normativa</a></li>
           <li><a href="#metodologia" class="navbar__link">Metodología</a></li>
           <li><a href="#modalidades" class="navbar__link">Modalidades</a></li>
           <li><a href="https://wa.me/34600000000?text=Hola%20Blanca,%20me%20gustaría%20recibir%20información%20sobre%20la%20preparación%20física%20para%20oposiciones." class="navbar__link" target="_blank" rel="noopener noreferrer">Contacto</a></li>
@@ -52,20 +53,23 @@
           Entrena con una planificación estructurada, sesiones en pista y seguimiento online
           para preparar las pruebas físicas con método, progresión y control de la evolución.
         </p>
+        <div class="hero__badges" aria-label="Puntos clave de la preparación">
+          <span>Entrenamiento en grupo</span>
+          <span>Ritmos ajustados por nivel</span>
+          <span>Seguimiento online</span>
+        </div>
         <div class="hero__actions">
           <a href="https://wa.me/34600000000?text=Hola%20Blanca,%20me%20gustaría%20recibir%20información%20sobre%20la%20preparación%20física%20para%20oposiciones." class="btn btn--primary" target="_blank" rel="noopener noreferrer">Nuevo grupo de entrenamiento</a>
           <a href="https://wa.me/34600000000?text=Hola%20Blanca,%20me%20gustaría%20recibir%20información%20sobre%20la%20preparación%20física%20para%20oposiciones." class="btn btn--outline" target="_blank" rel="noopener noreferrer">Infórmate sin compromiso</a>
         </div>
-        <div class="hero__badges">
-          <span class="badge">Entrenamiento en grupo</span>
-          <span class="badge">Ritmos ajustados por nivel</span>
-          <span class="badge">Seguimiento online</span>
-        </div>
       </div>
     </section>
 
+    <!-- ========== FRANJA VISUAL ========== -->
+    <section class="section section--parallax-bg section--photo-break" aria-hidden="true"></section>
+
     <!-- ========== PRUEBAS ========== -->
-    <section class="section section--alt" id="pruebas">
+    <section class="section section--solid" id="pruebas">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Pruebas físicas que preparamos</h2>
@@ -75,9 +79,6 @@
         <div class="cards-grid cards-grid--3">
           <!-- Card Policía Nacional -->
           <article class="card card--cnp">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z"/></svg>
-            </div>
             <h3 class="card__title">Policía Nacional</h3>
             <ul class="card__list">
               <li>Suspensión isométrica / dominadas</li>
@@ -91,9 +92,6 @@
 
           <!-- Card Guardia Civil -->
           <article class="card card--gc">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z"/></svg>
-            </div>
             <h3 class="card__title">Guardia Civil</h3>
             <ul class="card__list">
               <li>Natación</li>
@@ -108,9 +106,6 @@
 
           <!-- Card Policía Local -->
           <article class="card card--local">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z"/></svg>
-            </div>
             <h3 class="card__title">Policía Local</h3>
             <ul class="card__list">
               <li>Velocidad</li>
@@ -125,15 +120,94 @@
             </p>
           </article>
         </div>
+        
+      </div>
+    </section>
 
-        <p class="section__link-wrap">
-          <a href="#" class="section__link">Consultar normativa oficial de las pruebas →</a>
-        </p>
+    <!-- ========== NORMATIVA OFICIAL Y BAREMOS ========== -->
+    <section class="section section--parallax-bg" id="normativa">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Normativa Oficial y Baremos</h2>
+          <p class="section__subtitle">
+            Consulta la normativa oficial que regula las pruebas físicas y accede a las convocatorias vigentes de cada cuerpo.
+          </p>
+        </header>
+
+        <div class="cards-grid cards-grid--3">
+          <!-- Policía Nacional -->
+          <article class="card card--normativa card--cnp">
+            <h3 class="card__title">Policía Nacional</h3>
+            <p class="card__text">
+              La normativa base regula las pruebas físicas de acceso y los criterios de evaluación. Las convocatorias
+              anuales pueden incorporar actualizaciones o modificaciones específicas.
+            </p>
+            <div class="normativa-links">
+              <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2024-13261" class="normativa-btn" target="_blank" rel="noopener noreferrer">
+                <span class="normativa-btn__label">Normativa Base</span>
+                <span class="normativa-btn__detail">Orden INT/632/2024</span>
+              </a>
+              <a href="#" class="normativa-btn normativa-btn--pending">
+                <span class="normativa-btn__label">Última Convocatoria</span>
+                <span class="normativa-btn__detail">Convocatoria vigente</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Guardia Civil -->
+          <article class="card card--normativa card--gc">
+            <h3 class="card__title">Guardia Civil</h3>
+            <p class="card__text">
+              La normativa base regula las pruebas físicas, criterios de aptitud y baremos de acceso a la Escala de
+              Cabos y Guardias.
+            </p>
+            <div class="normativa-links">
+              <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2019-6149" class="normativa-btn" target="_blank" rel="noopener noreferrer">
+                <span class="normativa-btn__label">Normativa Base</span>
+                <span class="normativa-btn__detail">Orden PCI/362/2019</span>
+              </a>
+              <p class="normativa-note">Modificada posteriormente por normativa vigente.</p>
+              <a href="#" class="normativa-btn normativa-btn--pending">
+                <span class="normativa-btn__label">Última Convocatoria</span>
+                <span class="normativa-btn__detail">Convocatoria vigente</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Policía Local -->
+          <article class="card card--normativa card--local">
+            <h3 class="card__title">Policía Local</h3>
+            <p class="card__text">
+              Las pruebas físicas de Policía Local pueden variar según la Comunidad Autónoma y el Ayuntamiento convocante.
+            </p>
+            <div class="normativa-links">
+              <a href="#" class="normativa-btn normativa-btn--pending">
+                <span class="normativa-btn__label">Normativa Autonómica</span>
+                <span class="normativa-btn__detail">Consultar normativa autonómica</span>
+              </a>
+              <a href="https://www.boe.es/buscar/" class="normativa-btn" target="_blank" rel="noopener noreferrer">
+                <span class="normativa-btn__label">Convocatorias</span>
+                <span class="normativa-btn__detail">Buscador Oficial BOE</span>
+              </a>
+            </div>
+            <p class="normativa-foot">
+              Consulta la convocatoria específica del ayuntamiento al que opositas.
+            </p>
+          </article>
+        </div>
+
+        <aside class="normativa-notice">
+          <h3 class="normativa-notice__title">Importante</h3>
+          <p class="normativa-notice__text">
+            Las pruebas físicas, baremos y requisitos pueden modificarse en futuras convocatorias. Se recomienda
+            consultar siempre la normativa oficial vigente antes de preparar cualquier proceso selectivo.
+          </p>
+        </aside>
       </div>
     </section>
 
     <!-- ========== METODOLOGÍA ========== -->
-    <section class="section" id="metodologia">
+    <section class="section section--solid" id="metodologia">
       <div class="container">
         <header class="section__header section__header--narrow">
           <h2 class="section__title">Entrena con método, no con improvisación</h2>
@@ -196,7 +270,7 @@
     </section>
 
     <!-- ========== MODALIDADES ========== -->
-    <section class="section section--alt" id="modalidades">
+    <section class="section section--parallax-bg" id="modalidades">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Modalidades de preparación</h2>
@@ -222,6 +296,7 @@
             <p class="card__highlight">
               El grupo te da compromiso. La planificación te da estructura.
             </p>
+            <p class="card__trial">Prueba un día presencial gratis + 2 sesiones online</p>
             <a href="https://wa.me/34600000000?text=Hola%20Blanca,%20me%20gustaría%20recibir%20información%20sobre%20la%20preparación%20física%20para%20oposiciones." class="btn btn--primary" target="_blank" rel="noopener noreferrer">Quiero información</a>
           </article>
 
@@ -239,13 +314,14 @@
             <p class="card__highlight">
               Para opositores que no pueden asistir presencialmente, pero quieren entrenar con un plan claro.
             </p>
+            <p class="card__trial">Prueba 3 sesiones gratis</p>
             <a href="https://wa.me/34600000000?text=Hola%20Blanca,%20me%20gustaría%20recibir%20información%20sobre%20la%20preparación%20física%20para%20oposiciones." class="btn btn--outline" target="_blank" rel="noopener noreferrer">Quiero información</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ========== GALERÍA ========== -->
+    <!-- ========== GALERÍA TEMPORALMENTE OCULTA
     <section class="section" id="galeria">
       <div class="container">
         <header class="section__header">
@@ -286,9 +362,10 @@
         </div>
       </div>
     </section>
+    ========== -->
 
     <!-- ========== SOBRE MÍ ========== -->
-    <section class="section section--alt" id="sobre-mi">
+    <section class="section section--solid" id="sobre-mi">
       <div class="container">
         <div class="about">
           <header class="about__header">
@@ -351,7 +428,7 @@
         <ul class="footer__links">
           <li><a href="aviso-legal-privacidad.html">Aviso Legal y Privacidad</a></li>
           <li><a href="politica-cookies.html">Política de Cookies</a></li>
-          <li><a href="#">Normativa oficial de pruebas</a></li>
+          <li><a href="#normativa">Normativa oficial de pruebas</a></li>
         </ul>
       </nav>
 
