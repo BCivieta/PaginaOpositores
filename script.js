@@ -1,6 +1,6 @@
 /**
  * Blanca Civieta — Preparación Física Opositores
- * JavaScript mínimo: menú móvil.
+ * JavaScript mínimo: menú móvil y acordeón FAQ.
  */
 
 (function () {
@@ -26,5 +26,18 @@
       });
     });
   }
+
+  document.querySelectorAll('.faq__button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const item = button.closest('.faq__item');
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!isOpen));
+
+      if (item) {
+        item.classList.toggle('is-open', !isOpen);
+      }
+    });
+  });
 
 })();
