@@ -198,7 +198,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 88px;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar__logo {
@@ -218,10 +218,11 @@ ul {
 
 .navbar__logo-img {
   display: block;
-  height: 72px;
-  width: clamp(260px, 24vw, 360px);
-  object-fit: cover;
-  object-position: center 52%;
+  width: clamp(235px, 22vw, 315px);
+  height: auto;
+  max-height: 68px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .navbar__logo-sep {
@@ -233,13 +234,14 @@ ul {
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 1.8vw, 2rem);
+  min-width: 0;
 }
 
 .navbar__list {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: clamp(1rem, 1.7vw, 1.75rem);
 }
 
 .navbar__link {
@@ -1156,7 +1158,7 @@ ul {
 /* ============================================
    RESPONSIVE — Mobile first
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar__inner {
     height: 82px;
   }
@@ -1212,10 +1214,10 @@ ul {
   }
 
   .navbar__logo-img {
-    height: 58px;
-    width: 190px;
-    object-fit: cover;
-    object-position: center 52%;
+    width: clamp(225px, 40vw, 300px);
+    max-height: 62px;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .section--parallax-bg {
@@ -1224,9 +1226,10 @@ ul {
   }
 
   .section--photo-break {
-    min-height: clamp(15rem, 58vw, 24rem);
-    margin-top: clamp(-10.5rem, -28vw, -6rem);
-    background-position: center, center, 50% 58%;
+    min-height: clamp(32rem, 66.666vw, 43rem);
+    margin-top: clamp(-8rem, -14vw, -5rem);
+    background-position: center, center, center bottom;
+    background-size: cover, cover, contain;
   }
 
   .normativa-btn {
@@ -1258,7 +1261,25 @@ ul {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar__logo-img {
+    width: clamp(205px, 54vw, 275px);
+    max-height: 58px;
+  }
+
+  .section--photo-break {
+    min-height: clamp(17rem, 58vw, 25rem);
+    margin-top: clamp(-10.5rem, -28vw, -6rem);
+    background-position: center, center, 50% 58%;
+    background-size: cover;
+  }
+}
+
 @media (max-width: 480px) {
+  .navbar__logo-img {
+    width: clamp(185px, 62vw, 240px);
+  }
+
   .cards-grid--3,
   .cards-grid--2 {
     grid-template-columns: 1fr;
